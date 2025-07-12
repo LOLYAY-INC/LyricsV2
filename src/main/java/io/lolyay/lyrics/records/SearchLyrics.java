@@ -1,6 +1,8 @@
 package io.lolyay.lyrics.records;
 
-public record SearchLyrics(String url, String title, String author) {
+import com.google.gson.annotations.Expose;
+
+public record SearchLyrics(@Expose String url,@Expose String title,@Expose String author) {
     @Override
     public String toString() {
         return "SearchLyrics{" +

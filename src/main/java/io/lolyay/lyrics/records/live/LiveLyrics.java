@@ -1,7 +1,8 @@
 package io.lolyay.lyrics.records.live;
 
 
+import com.google.gson.annotations.Expose;
 import io.lolyay.lyrics.records.SearchLyrics;
 
-public record LiveLyrics(SearchLyrics query, String content, String source, LiveData liveData) {
+public record LiveLyrics(@Expose SearchLyrics query,@Expose String content,@Expose String source,@Expose LiveData liveData) {
 }

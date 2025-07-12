@@ -1,4 +1,6 @@
 package io.lolyay.lyrics.records;
 
-public record Lyrics(SearchLyrics query, String content, String source) {
+import com.google.gson.annotations.Expose;
+
+public record Lyrics(@Expose SearchLyrics query,@Expose String content,@Expose String source) {
 }

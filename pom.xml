@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.lolyay</groupId>
-    <artifactId>LyricsV2</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>lyricsv2</artifactId>
+    <version>1.0.0</version>
 
     <properties>
         <maven.compiler.source>23</maven.compiler.source>
@@ -34,4 +34,13 @@
             <version>1.20.1</version>
         </dependency>
     </dependencies>
+
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/LOLYAY-INC/LyricsV2</url>
+        </repository>
+    </distributionManagement>
 </project>
