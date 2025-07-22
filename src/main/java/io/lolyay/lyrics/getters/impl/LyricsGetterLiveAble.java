@@ -14,5 +14,6 @@ public abstract class LyricsGetterLiveAble extends LyricsGetter {
     }
 
     public abstract CompletableFuture<LiveLyrics> getLiveLyrics(String songName) throws LyricsNotFoundException;
+    public abstract CompletableFuture<LiveLyrics> getLiveLyrics(String songName, String artist) throws LyricsNotFoundException;
 
 }

@@ -9,7 +9,8 @@ import java.util.List;
 public abstract class LyricsGetterManager {
     private final static ArrayList<LyricsGetter> lyricsGetters = new ArrayList<>();
 
-    public static void initMusixMatch(String musixMatchCookie) {
+    public static void initDefault(String musixMatchCookie) {
+        lyricsGetters.add(new LrcLibGetter());
         lyricsGetters.add(new MusixMatchGetter(musixMatchCookie));
     }
 

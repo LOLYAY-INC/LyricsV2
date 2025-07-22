@@ -12,7 +12,9 @@ public abstract class LyricsGetter {
 
     public abstract boolean canGetLyrics(String songName);
 
-    public abstract CompletableFuture<Lyrics> getLyrics(String songName) throws LyricsNotFoundException;
+    public abstract CompletableFuture<Lyrics> getLyrics(String query) throws LyricsNotFoundException;
+
+    public abstract CompletableFuture<Lyrics> getLyrics(String songName, String artist) throws LyricsNotFoundException;
 
     public boolean canBeLive() {
         return false;

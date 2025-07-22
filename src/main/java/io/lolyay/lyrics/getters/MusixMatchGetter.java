@@ -45,7 +45,8 @@ public class MusixMatchGetter extends LyricsGetterLiveAble {
 
     private Map<String, String> getCookies() {
         Map<String, String> cookies = new HashMap<>();
-        cookies.put("musixmatchUserToken", userCookie);
+        if(!userCookie.isBlank())
+            cookies.put("musixmatchUserToken", userCookie);
         return cookies;
     }
 
@@ -184,6 +185,11 @@ public class MusixMatchGetter extends LyricsGetterLiveAble {
     }
 
     @Override
+    public CompletableFuture<Lyrics> getLyrics(String songName, String artist) throws LyricsNotFoundException {
+        return getLyrics(songName + " " + artist);
+    }
+
+    @Override
     public CompletableFuture<LiveLyrics> getLiveLyrics(String songName) {
         CompletableFuture<LiveLyrics> future = new CompletableFuture<>();
 
@@ -229,6 +235,11 @@ public class MusixMatchGetter extends LyricsGetterLiveAble {
       new Thread(scrapingTask).start();
 
         return future;
+    }
+
+    @Override
+    public CompletableFuture<LiveLyrics> getLiveLyrics(String songName, String artist) throws LyricsNotFoundException {
+        return getLiveLyrics(songName + " " + artist);
     }
 
 
